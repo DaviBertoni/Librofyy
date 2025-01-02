@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "f074bfe0-3704-4526-8637-6c65e138e8e6",
+		"name": "Librofyy",
+		"description": "Está documentação é referente aos endpoints da Librofyy que tem como objetivo oferecer uma solução completa para gestão de aluguel de livros. Ele permite o gerenciamento de usuários, livros e aluguéis, além de implementar autenticação, validações robustas e uma arquitetura modular.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30520240"
+	},
+	"item": [
+		{
+			"name": "Usuário",
+			"item": [
+				{
+					"name": "Criar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Davi\",\r\n  \"email\": \"exemple@gmail.com\",\r\n  \"senha\": \"123456789\",\r\n  \"telefone\": \"(32)99798-9099\",\r\n  \"cpf\": \"88708314004\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/users/cadastro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"users",
+								"cadastro"
+							]
+						},
+						"description": "• Endpoint Criar Usuário\n\n• Descrição  \nEndpoint para cadastro de um novo usuário\n\n• Método  \nMétodo utilizado nesse endpoint é POST\n\n• URL  \n[http://localhost:3003/users/cadastro](http://localhost:3003/users/cadastro)\n\n• Parâmetros de consulta  \nEste endpoint não possui parâmetros de consulta\n\n• Body  \nusername ( obrigatório ): Nome do usuário  \nemail ( obrigatório ): Email do usuário  \nsenha ( obrigatório ): Senha do usuário  \ntelefone ( obrigatório ): Telefone do usuário  \ncpf (obrigatório ): CPF do usuário\n\n• Headers  \nNão é necessário nenhum headers\n\n• Exemplo de envio:  \n{\n\n\"username\": \"Davi\",\n\n\"email\": \"[exemple@gmail.com](https://mailto:exemple@gmail.com)\",\n\n\"senha\": \"123456789\",\n\n\"telefone\": \"(32)99798-9099\",\n\n\"cpf\": \"88708314004\"\n\n}"
+					},
+					"response": [
+						{
+							"name": "Exemplo de Sucesso (201)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"Davi\",\r\n  \"email\": \"exemple@gmail.com\",\r\n  \"senha\": \"123456789\",\r\n  \"telefone\": \"(32)99798-9099\",\r\n  \"cpf\": \"88708314004\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3003/users/cadastro",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3003",
+									"path": [
+										"users",
+										"cadastro"
+									]
+								}
+							},
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{ \r\n\"message\": \"Cadastro realizado com sucesso\", \r\n\"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTM4M2JhLTY4NzktNzZlZS05MmEwLTVlZTU1ODI0NjkyMyIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzMzMDgxOTY5LCJleHAiOjE3MzMwODczNjl9.LGACf-40nj3FKDqViSl8Vfs55r5C9ZG3jQ5QC2drq1s\" \r\n}"
+						}
+					]
+				},
+				{
+					"name": "Fazer Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"exemple@gmail.com\",\r\n  \"senha\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"users",
+								"login"
+							]
+						},
+						"description": "• Endpoint Login de Usuário\n\n• Descrição  \nEndpoint para fazer Login de Usuário\n\n• Método  \nMétodo utilizado nesse endpoint é POST\n\n• URL\n\n[http://localhost:3003/users/login](http://localhost:3003/users/login)\n\n• Parâmetros de consulta  \nEste endpoint não possui parâmetros de consulta\n\n• Body  \nemail ( obrigatório ): Email do usuário  \nsenha ( obrigatório ): Senha do usuário\n\n• Headers  \nNão é necessário nenhum headers\n\n• Exemplo de envio:  \n{\n\n\"email\": \"[exemple@gmail.com](https://mailto:exemple@gmail.com)\",\n\n\"senha\": \"123456789\"\n\n}"
+					},
+					"response": [
+						{
+							"name": "Exemplo de Sucesso (200)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"exemple@gmail.com\",\r\n  \"senha\": \"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3003/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3003",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{ \r\n\"message\": \"Login realizado com sucesso\", \r\n\"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTM4M2JhLTY4NzktNzZlZS05MmEwLTVlZTU1ODI0NjkyMyIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzMzMDgxOTY5LCJleHAiOjE3MzMwODczNjl9.LGACf-40nj3FKDqViSl8Vfs55r5C9ZG3jQ5QC2drq1s\" \r\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualizar senha",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTM4M2JhLTY4NzktNzZlZS05MmEwLTVlZTU1ODI0NjkyMyIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzMzMDgxOTY5LCJleHAiOjE3MzMwODczNjl9.LGACf-40nj3FKDqViSl8Vfs55r5C9ZG3jQ5QC2drq1s",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"novaSenha\": \"126788888898\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/users/atualizarSenha",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"users",
+								"atualizarSenha"
+							]
+						},
+						"description": "• Endpoint Atualizado para atualizar senha do Usuário\n\n• Descrição  \nEndpoint para atualizar senha do usuário\n\n• Método  \nMétodo utilizado nesse endpoint é PATCH\n\n• URL  \n[http://localhost:3003/users/atualizarSenha](http://localhost:3003/users/atualizarSenha)\n\n• Parâmetros de consulta\n\nEste endpoint não possui parâmetros de consulta\n\n• Body  \nnovaSenha ( Obrigatório ): nova senha do usuário\n\n• Headers  \nAuthorization necessário, token retornado no login ou na criação do usuário\n\n• Exemplo de envio:  \n{  \n\"novaSenha\": \"126788888898\"  \n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar todos dados do usuário",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTM4M2JhLTY4NzktNzZlZS05MmEwLTVlZTU1ODI0NjkyMyIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzMzMDgxOTY5LCJleHAiOjE3MzMwODczNjl9.LGACf-40nj3FKDqViSl8Vfs55r5C9ZG3jQ5QC2drq1s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"novoUsername\": \"Davia\",\r\n  \"novoEmail\": \"asoares@gmail.com\",\r\n  \"novoTelefone\": \"(32)99817-9099\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/users/atualizarDados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"users",
+								"atualizarDados"
+							]
+						},
+						"description": "• Endpoint Atualizar todos dados do Usuário\n\n• Descrição  \nEndpoint para atualizar todos dados do usuário\n\n• Método  \nMétodo utilizado nesse endpoint é PUT\n\n• URL  \n[http://localhost:3003/users/atualizarDados](http://localhost:3003/users/atualizarDados)\n\n• Parâmetros de consulta\n\nEste endpoint não possui parâmetros de consulta\n\n• Body  \nnovoUsername ( Opcional ): Nome do usuário  \nnovoEmail ( Opcional ): Email do usuário  \nnovoTelefone ( Opcional ): Telefone do usuário\n\n• Headers  \nAuthorization necessário, token retornado no login ou na criação do usuário\n\n• Exemplo de envio:  \n{\n\n\"novoUsername\": \"Otavio\",\n\n\"novoEmail\": \"[exemple2000@gmail.com](https://mailto:exemple2000@gmail.com)\",\n\n\"novoTelefone\": \"(32)99817-9799\"\n\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Usuário por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTM4M2JhLTY4NzktNzZlZS05MmEwLTVlZTU1ODI0NjkyMyIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzMzMDgxOTY5LCJleHAiOjE3MzMwODczNjl9.LGACf-40nj3FKDqViSl8Vfs55r5C9ZG3jQ5QC2drq1s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3003/users/deletarUsuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"users",
+								"deletarUsuario"
+							]
+						},
+						"description": "• Endpoint Deletar Usuário por ID\n\n• Descrição  \nEndpoint para deletar usuário pelo ID\n\n• Método  \nMétodo utilizado nesse endpoint é DELETE\n\n• URL  \n[http://localhost:3003/users/deletarUsuario](http://localhost:3003/users/deletarUsuario)\n\n• Parâmetros de consulta\n\nEste endpoint possui não parâmetros de consulta\n\n• Body  \nNada é passado pelo Body\n\n• Headers  \nAuthorization necessário, token retornado no login ou na criação do usuário"
+					},
+					"response": []
+				}
+			],
+			"description": "## **Pasta Usuário**\n\n• **Descrição**  \nNesta pasta está os endpoints destinados ao usuário\n\n• **Endpoints**  \n\\- POST Criar usuário  \n\\- POST Fazer Login  \n\\- PATCH Atualizar senha  \n\\- PUT Atualizar todos dados do usuário  \n\\- DELETE Deletar usuário por ID"
+		},
+		{
+			"name": "Livros",
+			"item": [
+				{
+					"name": "Buscar livro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/books/buscarLivros?titulo=&autor=&genero=&dataPublicacao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"books",
+								"buscarLivros"
+							],
+							"query": [
+								{
+									"key": "titulo",
+									"value": ""
+								},
+								{
+									"key": "autor",
+									"value": ""
+								},
+								{
+									"key": "genero",
+									"value": ""
+								},
+								{
+									"key": "dataPublicacao",
+									"value": null
+								}
+							]
+						},
+						"description": "• EndPoint Buscar Livro\n\n• Descrição  \nEndpoint para retornar o livros especificos\n\n• Método  \nMétodo utilizado nesse endpoint é GET\n\n• URL  \n[http://localhost:3003/books/buscarLivros?titulo=&amp;autor=&amp;genero=Terror&amp;dataPublicacao](http://localhost:3003/books/buscarLivros?titulo=&autor=&genero=Terror&dataPublicacao)\n\n• Parâmetros de consulta  \nEste endpoint possui parâmetros de consulta por titulo, autor, genero e data de publicação\n\n• Body  \nNada é passado pelo Body\n\n• Headers  \nNão é necessário nenhum headers"
+					},
+					"response": []
+				}
+			],
+			"description": "## Pasta Livros\n\n• **Descrição**  \nNesta pasta está os endpoints destinados ao livros\n\n• **Endpoints**  \n\\- GET Buscar livro"
+		},
+		{
+			"name": "Empréstimo",
+			"item": [
+				{
+					"name": "Adicionar livros ao usuário",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTM4M2JlLWMzMjQtNzdiNC04MTM1LWI2YWFlNmUzNTYxMCIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzMzMDgyMTM3LCJleHAiOjE3MzMwODc1Mzd9.uD6XPhrGfWkZJ2LQxZfncyzXssTwvS7clsrF8GhnK7g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/rents/realizarEmprestimo/dffce0c2-fac4-4009-b640-085dae1b8e29",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"rents",
+								"realizarEmprestimo",
+								"dffce0c2-fac4-4009-b640-085dae1b8e29"
+							]
+						},
+						"description": "• EndPoint Adicionar livros ao usuário\n\n• Descrição  \nEndpoint para adicionar livros a lista de livros alugado do usuário\n\n• Método  \nMétodo utilizado nesse endpoint é POST\n\n• URL  \n[http://localhost:3003/rents/realizarEmprestimo/:idLivro](http://localhost:3003/rents/realizarEmprestimo/8da3c031-ee61-43b7-a33d-969d75c5f414)\n\n• Parâmetros de consulta  \nEste endpoint não possui parâmetros de consulta\n\n• Body  \nNada é passado pelo Body\n\n• Params  \nÉ necessário passar ID do livro pela URL da requisição\n\n• Headers  \nAuthorization necessário, token retornado no login ou na criação do usuário"
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar livro Cliente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTM4M2JlLWMzMjQtNzdiNC04MTM1LWI2YWFlNmUzNTYxMCIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzMzMDgyMTM3LCJleHAiOjE3MzMwODc1Mzd9.uD6XPhrGfWkZJ2LQxZfncyzXssTwvS7clsrF8GhnK7g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3003/rents/buscarLivrosDoUsuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"rents",
+								"buscarLivrosDoUsuario"
+							]
+						},
+						"description": "• EndPoint Buscar Livros do cliente\n\n• Descrição  \nEndpoint para retornar o livros especificados do cliente\n\n• Método  \nMétodo utilizado nesse endpoint é GET\n\n• URL  \n[http://localhost:3003/rents/buscarLivrosDoUsuario](http://localhost:3003/rents/buscarLivrosDoUsuario)\n\n• Parâmetros de consulta  \nEste endpoint não possui parâmetros de consulta\n\n• Body  \nNada é passado pelo Body\n\n• Headers  \nAuthorization necessário, token retornado no login ou na criação do usuário"
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Emprestimos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTM4M2JlLWMzMjQtNzdiNC04MTM1LWI2YWFlNmUzNTYxMCIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzMzMDgyMTM3LCJleHAiOjE3MzMwODc1Mzd9.uD6XPhrGfWkZJ2LQxZfncyzXssTwvS7clsrF8GhnK7g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3003/rents/buscarEmprestimos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"rents",
+								"buscarEmprestimos"
+							]
+						},
+						"description": "• EndPoint Buscar Emprestimos do cliente\n\n• Descrição  \nEndpoint para retornar os empréstimos do cliente\n\n• Método  \nMétodo utilizado nesse endpoint é GET\n\n• URL  \n[http://localhost:3003/rents/buscarEmprestimos](http://localhost:3003/rents/buscarEmprestimos)\n\n• Parâmetros de consulta  \nEste endpoint possui não parâmetros de consulta\n\n• Body  \nNada é passado pelo Body\n\n• Headers  \nAuthorization necessário, token retornado no login ou na criação do usuário"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancelar Emprestimo por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTM4M2JlLWMzMjQtNzdiNC04MTM1LWI2YWFlNmUzNTYxMCIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzMzMDgyMTM3LCJleHAiOjE3MzMwODc1Mzd9.uD6XPhrGfWkZJ2LQxZfncyzXssTwvS7clsrF8GhnK7g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3003/rents/cancelarEmprestimo/019383c0-07e7-7400-a15e-3ca3a270fec6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"rents",
+								"cancelarEmprestimo",
+								"019383c0-07e7-7400-a15e-3ca3a270fec6"
+							]
+						},
+						"description": "• Endpoint Cancelar Emprestimo por ID\n\n• Descrição  \nEndpoint para cancelar empréstimo por ID do livro pelo seu nome da lista de livros alugados do usuário\n\n• Método  \nMétodo utilizado nesse endpoint é DELETE\n\n• URL  \n[http://localhost:3003/rents/cancelarEmprestimo/01937ece-72b2-773a-9820-495c2535c897](http://localhost:3003/rents/cancelarEmprestimo/01937ece-72b2-773a-9820-495c2535c897)\n\n• Parâmetros de consulta\n\nEste endpoint possui não parâmetros de consulta\n\n• Body  \nNada é passado pelo Body\n\n• Params  \nÉ necessário passar ID do empréstimo pela URL da requisição\n\n• Headers  \nAuthorization necessário, token retornado no login ou na criação do usuário"
+					},
+					"response": []
+				}
+			],
+			"description": "## Pasta Emprétimos\n\n• **Descrição**  \nNesta pasta está os endpoints destinados aos empréstimos\n\n• **Endpoints**\n\n\\- POST Adicionar livros ao usuário  \n\\- GET Buscar livro Cliente  \n\\- GET Buscar Emprestimos  \n\\- DEL Cancelar Emprestimo por ID"
+		}
+	]
+}
